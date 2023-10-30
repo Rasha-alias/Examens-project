@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=DynaPuff&family=Oswald&display=swap');
+
+
+body{
+    background-color: var(--main-color);
+    margin: 0;
+    width: 100vw;
+} 
+
+/** Root **/
+:root{
+
+    /* Globle CSS-variables(Custom proprities)*/
+    --main-color:#f4edbe;
+    --main-comp-color: rgb(229, 155, 18);
+   
+    --main-text-font: 'Courier New', Courier, monospace;
+    --main-text-size: 12px;
+    --main-text-weight:400;
+    --main-text-color: #0b2293;
+
+    --main-head-font: 'Courier New', Courier, monospace;
+    --main-head-size: 18px;
+    --main-head-weight:600;
+    --main-head-color: #ebb2f2;
+} 
+
+/************************** Style Homepage *************************************/
+
+/** Page Wrap **/
+#wrap{
+  position: relative;
+	width: calc(100% ~'-' 56px);
+  color: var(--main-text-color);
+  font-family: var(--main-text-font);
+	font-size: var(--main-text-size);
+	padding-left: 56px;
+	line-height: 1.5;
+	&:before{
+		content: "BNI UPPSALA - TEAM UPPSALA";
+		position: fixed;
+		left: -1px;
+		top: -1px;
+		writing-mode: vertical-lr;
+		background: #D12031 ;
+		padding: 0 17px;
+		height: calc(100% ~'+' 1px);
+		display: block; 
+		color: white;
+		text-align: center;
+		-ms-transform: rotate(180deg); /* IE 9 */
+	  transform: rotate(180deg);
+	  letter-spacing: 7px;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+	}	
+}
+
+/** Page Header **/
+#header{
+  height: 70px;
+  background-color: #D12031;
+  margin: 0;
+  .inner{
+    .logo{
+      .inner{
+        a{
+          img{
+            height: 50px;
+            width: 70px;
+            padding: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/** Page Content **/
+#content{
+  > .inner{
+    margin-top:1px;
+    padding: 0px 20px;
+
+    > .section{
+      h1{
+        color: var(--main-head-color);
+        font-family: var(--main-head-font);
+	      font-size: var(--main-head-size);
+        font-weight: var(--main-head-weight)
+      }
+       p span{
+        font-weight: var(--main-text-weight);
+      }
+
+      > .element {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        > .element-style{
+          height: 10em;
+          width: 30em;
+          background-color: var(--main-comp-color); 
+          display: flex;
+          justify-content: center;
+          align-items: center;
+    
+          > p{
+            color: var(--main-text-color);
+            font-family: var(--main-text-font);
+            font-size: 50px;
+            font-weight: var(--main-text-weight);
+          }
+        }  
+      }      
+    }  
+  }
+}  
+
+  /** Admin content **/
+  .admin-content{
+    > .inner{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+  }
+
+
+/******************************************** Popup Styling *****************************************************/
+.popup p{
+  margin:0;
+}
+
+.popup  > .inner > .popup-content > .content-container > section > .group-wrap > .group-content{
+  label:nth-child(3){
+    margin-left: 60px;
+  }
+}
+
+
+
+.popup{
+  > .inner > .popup-content > .content-container > section{  
+
+    > .group-name{
+      margin-top: 30px;
+      margin-left: 10px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      color: #595959;
+      font-weight: bold;
+      letter-spacing: 1px;
+      line-height: 18px;
+      font-size: 16px;
+      }
+
+    > .group-wrap{
+      border: 2px solid #EAF0F6;
+      border-radius: 10px;
+      padding: 12px 4px;
+    
+      > .group-content{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 6px;
+        position: relative; 
+
+        > .allLabel{
+          font-size: 16px;
+          padding: 10px;
+          color: #425B76;
+          &::first-letter{
+            text-transform: capitalize;
+          }       
+        }
+
+        > input#text-color-element, input#head-color-element, input#main-color-element, input#complementary-color-element{
+          width:60px;
+          font-size: 12px; 
+          outline: none; 
+          background: #EAF0F6;
+          color: #000000;
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+          border: none; 
+          padding: 5px 6px;
+        }
+        
+        > .dropdown{   
+        
+          > #text-font-element, #text-size-element, #text-weight-element, #head-font-element, #head-size-element, #head-weight-element{
+            font-size: 12px;  
+            outline: none;
+            background: #EAF0F6;
+            color: #000000;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+            border: none; 
+            padding: 5px 6px;
+            position: absolute;
+            z-index: 1;
+            top: 5px;
+
+            
+            > option{
+              color: black;
+              padding:5px 10px;
+              text-align: left;
+              background-color:  #EAF0F6;
+              font-size: 12px; 
+              border-radius: none;
+              font-weight: normal;
+              display: block;
+              white-space: nowrap;
+              min-height: 1.5em;
+              top: 20px;
+            }
+          }
+        } 
+
+        > #text-color-picker-element, > #head-color-picker-element, > #main-color-picker-element, > #complementary-color-picker-element{
+          margin-left: -1px;
+          cursor: pointer;
+          padding: 0px;
+          height: 24px;
+          width: 22px; 
+          border: none; 
+          background-color: #EAF0F6;
+          box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+        } 
+      }  
+    }
+  }  
+}
+
+
+/************************** Pop Up panel *****************************/
+
+.popup {
+position: fixed;
+width: 350px;
+right: 20px;
+top: 100px;
+background: #ffffff;
+border-radius: 10px;
+margin-bottom: 10px;
+z-index: 999;
+display: none;
+/*max-height: 85%;
+overflow-y: auto;*/
+
+  > .inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+        
+    > .popup-header{
+      /*position: absolute;
+      top: 0px;
+      left:0px;*/
+      /*position: relative;*/
+      /*top: -20px;
+      left:-20px;*/
+     
+      /*width: calc(100% ~ '+' 40px);
+      left: calc(50% ~ '-' 50% ~ '-' 20px);*/
+     /* transform: translateY(-20px);*/
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      height: 65px;
+      width: 100% !important;
+      background: #abaaaa;
+      border-radius: 10px 10px 0 0;
+        
+      > .header-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color: rgb(255, 255, 255);
+        height: 100%;
+
+        > img{
+          overflow: hidden;
+          border-radius: 40px;
+        }
+            
+        > h3{
+          font-family: 'Arial';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 22px;
+          line-height: 21px;
+          letter-spacing: 1px;
+          padding: 0;
+          margin: 0;
+          margin-block-start: 0.2em;
+          margin-inline-start: -1.5em; /* lite till vänster*/
+        }
+
+        > a img.close-button-image{
+          float: right; 
+          padding-left: 20px;
+        }
+      }
+    }
+
+    .popup-content{
+     /* height: calc(100% ~ '-' 65px);*/
+      padding: 20px;
+      width: auto;
+      height: auto;
+      min-height: 70vh ;
+      max-height: 75vh;
+      overflow: auto;
+      
+      > .content-container{
+       /* height: 100%;*/
+        /*min-height: 500px;
+        max-height: 600px;*/
+        /* Add overflow-y: auto to enable scrolling */
+       /* overflow-y: auto;*/
+
+        section:nth-child(1){
+          padding: 0;
+          p{
+            background: #EAF0F6;
+            border-radius: 10px;
+            font-family: 'Arial';
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 18px;
+            color: #425B76;
+            text-align: center;
+            padding: 18px 0;
+          }
+        }
+
+        section:nth-child(5){
+          margin-top: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          > .update-button{
+              background:  #abaaaa;
+              color: #ffffff;
+              font-family: 'Arial';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 20px;
+              line-height: 21px;
+              letter-spacing: 1px;
+              border: none;
+              border-radius: 10px;
+              text-align: center;
+              padding: 12px 30px;
+              &:hover{
+                font-size: 22px;
+                box-shadow: 0px 0px 7px  rgb(0, 0, 0);
+              }
+
+              &:active{
+                background-color: #ffffff;
+                color: #767575;
+                text-shadow: 0 0 3px #abaaaa;
+              }
+          }  
+        }
+      }
+    }
+  }
+
+  &:target{
+    display: block;
+  }
+}
+
+/**************************************** Responsivitet *******************************/
+
+/*@media screen and (max-height: 840px){
+  .popup {
+    padding: 15px;
+    > .inner > .popup-header{
+      top: -15px;
+      left:-15px;
+      width: calc(100% ~ '+' 30px);
+    } 
+  }        
+}*/
+  
